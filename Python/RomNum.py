@@ -60,5 +60,4 @@ while convert > 0:
         convert = convert - 1
         I += 1
 
-print "M" * M, "CM" * CM, "D" * D, "CD" * CD, "C" * C, "XC" * XC, "L" * L, "XL" * XL, "X" * X, "IX" * IX, "V" * V, "IV" * IV, "I" * I
 print "M" * M + "CM" * CM + "D" * D + "CD" * CD + "C" * C + "XC" * XC + "L" * L + "XL" * XL + "X" * X + "IX" * IX + "V" * V + "IV" * IV + "I" * I
