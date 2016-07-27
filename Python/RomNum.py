@@ -1,12 +1,9 @@
+# Roman numeral converter. Asks the user for a number and then
+# converts the number to it's roman numeral
+
 convert = int(raw_input('Please enter a number.\n'))
 
-# counter = 0
-# while convert >= 1:
-#     convert = convert / 10
-#     counter += 1
-
-# print counter
-
+# Counters that correspond with their roman numeral value
 M = 0
 CM = 0
 D = 0
@@ -21,6 +18,7 @@ V = 0
 IV = 0
 I = 0
 
+# Looping if statement to determine the number and add to the counters
 while convert > 0:
     if convert >= 1000:
         convert = convert - 1000
@@ -63,3 +61,4 @@ while convert > 0:
         I += 1
 
 print "M" * M, "CM" * CM, "D" * D, "CD" * CD, "C" * C, "XC" * XC, "L" * L, "XL" * XL, "X" * X, "IX" * IX, "V" * V, "IV" * IV, "I" * I
+print "M" * M + "CM" * CM + "D" * D + "CD" * CD + "C" * C + "XC" * XC + "L" * L + "XL" * XL + "X" * X + "IX" * IX + "V" * V + "IV" * IV + "I" * I
