@@ -1,5 +1,6 @@
 # Roman numeral converter. Asks the user for a number and then
 # converts the number to it's roman numeral
+import collections
 
 convert = int(raw_input('Please enter a number.\n'))
 
@@ -63,23 +64,26 @@ convert = int(raw_input('Please enter a number.\n'))
 # print "M" * M + "CM" * CM + "D" * D + "CD" * CD + "C" * C + "XC" * XC + "L" * L + "XL" * XL + "X" * X + "IX" * IX + "V" * V + "IV" * IV + "I" * I
 
 # Considering and trying to implement a dictionry
-numerals = {
-    1000: "M",
-    900: "CM",
-    500: "D",
-    400: "CD",
-    100: "C",
-    90: "XC",
-    50: "L",
-    40: "XL",
-    10: "X",
-    9: "IX",
-    5: "V",
-    4: "IV",
-    1: "I",
-}
+numerals = collections.OrderedDict()
+numerals["M"] = 1000
+numerals["CM"] = 900
+numerals["D"] = 500
+numerals["CD"] = 400
+numerals["C"]  = 100
+numerals["XC"] = 90
+numerals["L"] = 50
+numerals["XL"] = 40
+numerals["X"] = 10
+numerals["IX"] = 9
+numerals["V"] = 5
+numerals["IV"] = 4
+numerals["I"] = 1
 
-while convert > 0:
-    for key,value in numerals.items():
-        convert = convert - key
-        print value
+
+for key, value in numerals.items():
+    divider = convert / value
+    if divider > 0:
+        print(divider) * key,
+        convert = convert % value
+    else:
+        continue
