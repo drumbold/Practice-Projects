@@ -20,11 +20,9 @@ numerals["V"] = 5
 numerals["IV"] = 4
 numerals["I"] = 1
 
-
+out = ""
 for key, value in numerals.items():
-    divider = convert / value
-    if divider > 0:
-        print(divider) * key,
-        convert = convert % value
-    else:
-        continue
+    divider = int(convert / value)
+    out += (divider) * key
+    convert = convert % value
+print out
